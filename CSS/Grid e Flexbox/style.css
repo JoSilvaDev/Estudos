@@ -129,7 +129,7 @@ img{
 
     .sidebar > div{
         flex: 1 0 200px;
-        margin: 0 10px;
+        margin: 10px 10px;
     }
 }
 
