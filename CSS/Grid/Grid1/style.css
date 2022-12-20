@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 20vw 40vw 30vw 10vw;
+    grid-template-areas: "h ar"
+                                        "m ar"
+                                        "f a";
+}
+
+header{
+    background-color: green;
+    grid-area: h;
+}
+
+main{
+    background-color: blue;
+    grid-area: m;
+}
+
+aside{
+    background-color: yellow;
+    grid-area: a;
+}
+
+article{
+    background-color: rgb(255, 255, 255);
+    grid-area: ar;
+}
+
+footer{
+    background-color: red;
+    grid-area: f;
+}
