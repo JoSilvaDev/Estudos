@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Define the container for the carousel */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Define the images in the carousel */
+.carousel .slides {
+  display: flex;
+  width: 100%;
+  position: relative;
+  transition: transform .6s ease-in-out;
+}
+
+/* Define the individual images */
+.carousel .slides img {
+  width: 100%;
+}
+
+/* Define the left and right arrows */
+.carousel .arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Style the right arrow */
+.carousel .right-arrow {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color */
+.carousel .arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="slides">
+            <img src="imagens/Captura de Tela (66).png">
+            <img src="imagens/Captura de Tela (67).png">
+            <img src="imagens/Captura de Tela (68).png">
+        </div>
+        <a class="arrow left-arrow">&#x276E;</a>
+        <a class="arrow right-arrow">&#x276F;</a>
+    </div>
+    
+</body>
+
+<script>
+    var slideIndex = 1;
+        var slides = document.getElementsByClassName("slides")[0];
+        var leftArrow = document.getElementsByClassName("left-arrow")[0];
+        var rightArrow = document.getElementsByClassName("right-arrow")[0];
+
+        function showSlides(n) {
+            slideIndex += n;
+            if (slideIndex > slides.childElementCount) {
+                slideIndex = 1;
+            } else if (slideIndex < 1) {
+                slideIndex = slides.childElementCount;
+            }
+            slides.style.transform = "translateX(" + (-100 * (slideIndex - 1)) + "%)";
+        }
+
+        leftArrow.addEventListener("click", function () {
+            showSlides(-1);
+        });
+
+        rightArrow.addEventListener("click", function () {
+            showSlides(1);
+        });
+
+        // function to start the carousel
+            function startCarousel() {
+                intervalId = setInterval(function () {
+                    showSlides(1);
+                }, 3000);
+            }
+
+            // function to stop the carousel
+            function stopCarousel() {
+                clearInterval(intervalId);
+            }
+
+            // start the carousel when the page loads
+            startCarousel();
+
+            // stop the carousel when the mouse enters the carousel container
+            carousel.addEventListener("mouseenter", stopCarousel);
+
+            // restart the carousel when the mouse leaves the carousel container
+            carousel.addEventListener("mouseleave", startCarousel);
+</script>
+</html>
