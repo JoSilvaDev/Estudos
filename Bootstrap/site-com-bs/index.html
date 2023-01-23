@@ -17,7 +17,18 @@
 
     <style>
 
+        body{
+            font-family: system-ui, -apple-system;
+        }
+
+        .navbar{
+            position: absolute;
+            z-index:1; 
+            width: 100%;
+        }
+
         .carousel img{
+            min-height: 40vh;
             max-height: 80vh;
         }
 
@@ -31,7 +42,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
         <div class="container-fluid col-11 m-auto">
             <a class="navbar-brand" href="#">
                 <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
@@ -43,7 +54,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#destinos">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
@@ -95,8 +106,8 @@
     
   </header>
   <main>
-            <div class="title col-10 m-auto text-center mt-4 ">
-                <h2>My Title</h2>
+            <div id="destinos" class="title col-10 m-auto text-center mt-4 ">
+                <h2>Conheça seu próximo destino</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa et dicta recusandae asperiores! Illo facere culpa
                     laudantium libero. Porro sapiente ratione nisi accusamus voluptate.
